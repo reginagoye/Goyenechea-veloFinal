@@ -17,7 +17,7 @@ $fontColor: yellowgreen;
     padding: 0;
 }
 html{
-    scroll-behavior: smooth;
+    scroll-behavior:smooth;
 }
 body {
     background-color: $backgroundColorGrey;
@@ -31,19 +31,20 @@ p{
 }
 main{
     background-image: url(./multimedia/cyclist-resting-silhouette-at-sunset-active-outdoor-sport-concept.jpg) ;
-    background-size: cover;
+    background-size:cover;
     background-position: center;
     width: 100%;
-    height: 450px;
+    height: auto;
+}
+h6{
+    font-size: 30px;
 }
 .presentacion{
-margin: 5px;
+// margin: 5px;
 padding: 2%;
         div{
     font-size:larger;
-    /* float: right; */
     text-align:justify;
-    /* width: 50%; */
     margin: 2px;
     }
 }
@@ -82,27 +83,30 @@ top: 20px;
 box-sizing: border-box;
 color: grey;
 width: 250px;
+height: auto;
 float: center;
 background-color: rgba(0, 0, 0, 0.804);
 padding: 20px;
 font-family: $fontMont;
-/* padding-top:  70px; */
-margin-left: 45px;
+margin-left: 10%;
 border: 2px solid yellowgreen;
-h2 {
-    color: $fontColor;
-    background-color: $backgroundColorBlack;
+    h5 {
+        color: $fontColor;
+        background-color: $backgroundColorBlack;
+    }
+        & p {
+        margin-bottom: 20px;
+        color: $superYellow;
+    }
+            & a {
+            background-color: $superYellow;
+            color: grey;
+            text-decoration: none;
+            padding: 2px;
+            width: 10%;
+            height: 10%;
+        }
 }
-    p {
-    margin-bottom: 20px;
-    color: $superYellow;
-}
-    a {
-    background-color: $superYellow;
-    color: grey;
-    text-decoration: none;
-    padding: 2px;
-}}
 #call a:hover {
     background-color: $backgroundColorBlack;
 }
@@ -128,6 +132,30 @@ h2 {
     text-align: center;
     color: grey;
     padding: 10px;
+    width: 50%;
+    height: auto;
+    transition: 2s;
+    transition-timing-function: ease-out;
+}
+h2:hover{
+    width: 100%;
+    height: auto;
+}
+h3 {
+    @include titulos(rgba(192, 205, 50, 0.952), 'Montserrat', x-large);
+    text-transform: capitalize;
+    text-align: center;
+    color: grey;
+    padding: 10px;
+    width: 50%;
+    height: auto;
+    transition: 1s;
+    transition-timing-function: ease-out;
+}
+h3:hover{
+    transition-timing-function: ease-out;
+    width: 100%;
+    height: auto;
 }
 h4 {
     @include titulos(rgba(192, 205, 50, 0.904), 'Montserrat', 25px);
@@ -135,11 +163,6 @@ h4 {
     color: black;
     padding: 15px;
 }
-// section {
-//     background-color: $backgroundColorGrey;
-//     height: auto;
-//     width: 100%;
-// }
 .movimiento {
     background-color: $backgroundColorBlack;
     color: $fontColor;
@@ -178,26 +201,39 @@ p {
     font-size: 15px;
 }
 #reservarBot {
+    width: 8%;
+    height: 8%;
     font-family: $fontMont;
     font-size: large;
     text-align: start;
     text-decoration: none;
     color: $fontColor;
     background-color: $backgroundColorBlack;
-    padding: 10px;
-    margin: 15px;
+    // padding: 10px;
+    // margin: 15px;
     position: fixed;
     bottom: 5%;
     left: 10%;
+    animation-name: reservar;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: 5;
+    animation-direction: alternate;
 }
 #reservarBot:hover {
     background-color: $backgroundColorYellow;
     color: black;
 }
+@keyframes reservar {
+    0%   {background-color: black; left:10%; right:10%}
+    25%  {background-color: rgba(255, 255, 0, 0.829);left:10%; right:50%}
+    50%  {background-color: yellowgreen;left:50%; right:50%}
+    100% {background-color: black;left:50%; right:10%}
+}
 .subir {
     height: 50px;
     width: 50px;
-    background-color: $backgroundColorYellow;
+    background-color: $backgroundColorBlack;
     position: fixed;
     bottom: 40px;
     right: 40px;
@@ -228,16 +264,7 @@ p {
 @import "./scss/contacto";
 @import "./scss/reservar";
 
-// #inicio:hover {
-//     color: $fontColor;
-//     background-color: $backgroundColorBlack;
-// } 
-.reservar{
-    // width: 100%;
-    // height: auto;
-    background-color: rgb(176, 176, 176);
-    padding: 20px;
-}
+
 #reservarBici{
     display: flex;
     flex-direction: row;
@@ -250,35 +277,8 @@ p {
         // min-width: 400px;
         border-radius: 10%;
     }
-    }
-#reservarDiaDeCampo{
-    @extend #reservarBici;
-    // display: flex;
-    // flex-direction: row;
-    // justify-content: space-evenly;
-    // align-items: center;
-    // flex-wrap: wrap;
-    // & img{
-    //     padding: 2%;
-    //     padding-left: 2%;
-    //     // min-width: 400px;
-    //     border-radius: 10%;
-    // }
 }
-#reservarWalking{
-    @extend #reservarBici;
 
-    // display: flex;
-    // flex-direction: row;
-    // justify-content: space-evenly;
-    // align-items: center;
-    // flex-wrap: wrap;
-    // & img{
-    //     padding: 2%;
-    //     padding-left: 2%;
-    //     border-radius: 10%;
-    // }
-}
 #reservarBot{
     font-family: 'Montserrat', sans-serif;
     font-size: large;
@@ -287,7 +287,7 @@ p {
     color: yellowgreen;
     background-color: black;
     padding: 10px;
-    margin: 15px;
+    // margin: 15px;
     position:fixed;
     bottom: 5%;
     left: 10%;

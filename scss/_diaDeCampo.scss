@@ -7,29 +7,52 @@
     
     width: 100%;
     height: auto;
-    /* display: inline-flex; */
-    /* flex-direction: row; */
-    /* flex-wrap: wrap-reverse; */
     padding: 5%;
     align-items: center;
     justify-content: space-around;
 
     p{
-        /* padding: 10px; */
         text-align: justify;
         width: 300px;
     }
 }
-.imagenDiaDeCampo{
+.imagenDiaDeCampo-1{
     padding: 1%;
     margin-left:  auto;
     margin-right: auto;
     min-width: 200px;
+    width: 100px;
     border-radius: 15%;
+    transition: width 2s;
+
 }
-.imagenDiaDeCampo:hover{
-    transform: scale(1.15);
-    transition: all 0.8s;
+.imagenDiaDeCampo-1:hover{
+    width: 450px;
+}
+.imagenDiaDeCampo-2{
+    padding: 1%;
+    margin-left:  auto;
+    margin-right: auto;
+    min-width: 200px;
+    width: 100px;
+    border-radius: 15%;
+    transition: width 2s;
+}
+.imagenDiaDeCampo-2:hover{
+    width: 450px;
+}
+.imagenDiaDeCampo-3{
+    padding: 1%;
+    margin-left:  auto;
+    margin-right: auto;
+    min-width: 200px;
+    width: 100px;
+    border-radius: 15%;
+    transition: width 1s;
+
+}
+.imagenDiaDeCampo-3:hover{
+    width: 450px;
 }
 @for $incremento from 4 to 1 {
     .imagenDiaDeCampo-#{$incremento} {

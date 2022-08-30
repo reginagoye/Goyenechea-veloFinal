@@ -16,55 +16,32 @@
     color: yellowgreen;
     & img{
         padding: 2%;
-        // min-width: 400px;
         border-radius: 10%;
     }
     }
 .reservarDiaDeCampo{
     @extend #reservarBici;
-    // display: flex;
-    // flex-direction: row;
-    // justify-content: space-evenly;
-    // align-items: center;
-    // flex-wrap: wrap;
-    // & img{
-    //     padding: 2%;
-    //     padding-left: 2%;
-    //     // min-width: 400px;
-    //     border-radius: 10%;
-    // }
 }
 #reservarWalking{
     @extend #reservarBici;
-
-    // display: flex;
-    // flex-direction: row;
-    // justify-content: space-evenly;
-    // align-items: center;
-    // flex-wrap: wrap;
-    // & img{
-    //     padding: 2%;
-    //     padding-left: 2%;
-    //     border-radius: 10%;
-    // }
 }
-#reservarBot{
-    font-family: 'Montserrat', sans-serif;
-    font-size: large;
-    text-align:start;
-    text-decoration: none;
-    color: yellowgreen;
-    background-color: black;
-    padding: 10px;
-    margin: 15px;
-    position:fixed;
-    bottom: 5%;
-    left: 10%;
-}
-#reservarBot:hover{
-    background-color: yellowgreen;
-    color: black;
-}
+// #reservarBot{
+//     font-family: 'Montserrat', sans-serif;
+//     font-size: large;
+//     text-align:start;
+//     text-decoration: none;
+//     color: yellowgreen;
+//     background-color: black;
+//     padding: 10px;
+//     margin: 15px;
+//     position:fixed;
+//     bottom: 5%;
+//     left: 10%;
+// }
+// #reservarBot:hover{
+//     background-color: yellowgreen;
+//     color: black;
+// }
 @for $in from 1 through 3 {
     #bucle-#{$in} {
         background-color: darken($superYellow, $in * 30%);
@@ -114,4 +91,13 @@
 }
 #texto2{
     @extend #texto1;
+}
+table{
+    width: 50%;
+    height: 200px;
+    transition: width 2s, height 2s;
+}
+table:hover{
+    width: 100%;
+    height: auto;
 }
